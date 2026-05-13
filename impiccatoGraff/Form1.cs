@@ -8,6 +8,7 @@ namespace impiccatoGraff
         Random rnd = new Random();
 
         int tent = 0;
+        string par, lettera, trattini = "";
 
         public Form1()
         {
@@ -21,12 +22,11 @@ namespace impiccatoGraff
 
         private void GenPar_Click(object sender, EventArgs e)
         {
-            string par, trattini = "";
             string[] arrTemp;
 
             if (parole.Count == 0)
             {
-                using (StreamReader sr = new StreamReader("lista_categorie.csv"))
+                using (StreamReader sr = new StreamReader("paroleImp.csv"))
                 {
                     sr.ReadLine();
                     string riga = sr.ReadLine();
@@ -115,5 +115,36 @@ namespace impiccatoGraff
 
         }
 
+        private void buttonInsert_Click(object sender, EventArgs e)
+        {
+
+            lettera = textInsert.Text;
+
+            lettera = lettera.ToLower();
+
+            par = par.ToLower();
+
+            if (par.Contains(lettera) == true)
+            {
+                char[] arrayTrattini = trattini.ToCharArray();
+
+                for (int i = 0; i < par.Length; i++)
+                {
+                    if (par[i] == Convert.ToChar(lettera))
+                    {
+                        arrayTrattini[i] = Convert.ToChar(lettera);
+                    }
+                }
+
+                trattini = new string(arrayTrattini);
+
+                lblTrat.Text = "";
+                lblTrat.Text = trattini;
+            }
+            else
+            {
+                tent = tent - 1;
+            }
+        }
     }
 }
