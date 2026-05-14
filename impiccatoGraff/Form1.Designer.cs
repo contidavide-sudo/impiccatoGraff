@@ -38,6 +38,9 @@
             buttonF = new Button();
             buttonM = new Button();
             buttonD = new Button();
+            lblScritTent = new Label();
+            lblTent = new Label();
+            lblGameOver = new Label();
             SuspendLayout();
             // 
             // labelTitolo
@@ -101,9 +104,10 @@
             // lblTrat
             // 
             lblTrat.AutoSize = true;
+            lblTrat.Font = new Font("Courier New", 16F, FontStyle.Bold);
             lblTrat.Location = new Point(201, 329);
             lblTrat.Name = "lblTrat";
-            lblTrat.Size = new Size(0, 20);
+            lblTrat.Size = new Size(0, 31);
             lblTrat.TabIndex = 6;
             // 
             // buttonF
@@ -139,11 +143,42 @@
             buttonD.UseVisualStyleBackColor = true;
             buttonD.Click += buttonD_Click;
             // 
+            // lblScritTent
+            // 
+            lblScritTent.AutoSize = true;
+            lblScritTent.Location = new Point(80, 218);
+            lblScritTent.Name = "lblScritTent";
+            lblScritTent.Size = new Size(139, 20);
+            lblScritTent.TabIndex = 10;
+            lblScritTent.Text = "Tentativi rimanenti: ";
+            // 
+            // lblTent
+            // 
+            lblTent.AutoSize = true;
+            lblTent.Location = new Point(225, 218);
+            lblTent.Name = "lblTent";
+            lblTent.Size = new Size(0, 20);
+            lblTent.TabIndex = 11;
+            // 
+            // lblGameOver
+            // 
+            lblGameOver.AutoSize = true;
+            lblGameOver.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGameOver.ForeColor = SystemColors.MenuHighlight;
+            lblGameOver.Location = new Point(309, 303);
+            lblGameOver.Name = "lblGameOver";
+            lblGameOver.Size = new Size(442, 106);
+            lblGameOver.TabIndex = 12;
+            lblGameOver.Text = "Game Over";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1096, 692);
+            Controls.Add(lblGameOver);
+            Controls.Add(lblTent);
+            Controls.Add(lblScritTent);
             Controls.Add(buttonD);
             Controls.Add(buttonM);
             Controls.Add(buttonF);
@@ -174,5 +209,8 @@
         private Button buttonF;
         private Button buttonM;
         private Button buttonD;
+        private Label lblScritTent;
+        private Label lblTent;
+        private Label lblGameOver;
     }
 }
