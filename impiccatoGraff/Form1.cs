@@ -102,16 +102,38 @@ namespace impiccatoGraff
             }
         }
 
-        private void VisGameOver()
+        private void VisGameOver(bool v)
         {
-            GenPar.Visible = false;
-            labelInsert.Visible = false;
-            textInsert.Visible = false;
-            buttonInsert.Visible = false;
-            lblScritTent.Visible = false;
-            lblTent.Visible = false;
-            lblGameOver.Visible = true;
+            if(v == true)
+            {
+                GenPar.Visible = false;
+                labelInsert.Visible = false;
+                textInsert.Visible = false;
+                buttonInsert.Visible = false;
+                lblScritTent.Visible = false;
+                lblTent.Visible = false;
+                lblTrat.Visible = false;
 
+                lblGameOver.Text = "";
+                lblGameOver.Text = "GAME OVER";
+
+                lblGameOver.Visible = true;
+            }
+            else
+            {
+                GenPar.Visible = false;
+                labelInsert.Visible = false;
+                textInsert.Visible = false;
+                buttonInsert.Visible = false;
+                lblScritTent.Visible = false;
+                lblTent.Visible = false;
+                lblTrat.Visible = false;
+
+                lblGameOver.Text = "";
+                lblGameOver.Text = "WIN";
+
+                lblGameOver.Visible = true;
+            }
         }
 
         private void buttonF_Click(object sender, EventArgs e)
@@ -162,6 +184,12 @@ namespace impiccatoGraff
 
                 lblTrat.Text = "";
                 lblTrat.Text = trattini;
+
+                if (lblTrat.Text == par)
+                {
+                    VisGameOver(false);
+                }
+            
             }
             else
             {
@@ -169,7 +197,10 @@ namespace impiccatoGraff
 
                 lblTent.Text = Convert.ToString(tent);
 
-                VisGameOver();
+                if (tent == 0)
+                {
+                    VisGameOver(true);
+                }
             }
         }
 

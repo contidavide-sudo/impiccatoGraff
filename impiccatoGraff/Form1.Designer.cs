@@ -41,6 +41,7 @@
             lblScritTent = new Label();
             lblTent = new Label();
             lblGameOver = new Label();
+            buttonJolly = new Button();
             SuspendLayout();
             // 
             // labelTitolo
@@ -48,36 +49,34 @@
             labelTitolo.AutoSize = true;
             labelTitolo.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelTitolo.ForeColor = SystemColors.MenuHighlight;
-            labelTitolo.Location = new Point(177, 56);
+            labelTitolo.Location = new Point(155, 42);
             labelTitolo.Name = "labelTitolo";
-            labelTitolo.Size = new Size(757, 69);
+            labelTitolo.Size = new Size(605, 55);
             labelTitolo.TabIndex = 0;
             labelTitolo.Text = "GIOCO DELL' IMPICCATO";
             labelTitolo.TextAlign = ContentAlignment.TopCenter;
             // 
             // textInsert
             // 
-            textInsert.Location = new Point(694, 413);
-            textInsert.Margin = new Padding(3, 4, 3, 4);
+            textInsert.Location = new Point(607, 310);
             textInsert.Name = "textInsert";
-            textInsert.Size = new Size(122, 27);
+            textInsert.Size = new Size(107, 23);
             textInsert.TabIndex = 1;
             // 
             // labelInsert
             // 
             labelInsert.AutoSize = true;
-            labelInsert.Location = new Point(694, 373);
+            labelInsert.Location = new Point(607, 280);
             labelInsert.Name = "labelInsert";
-            labelInsert.Size = new Size(139, 20);
+            labelInsert.Size = new Size(111, 15);
             labelInsert.TabIndex = 2;
             labelInsert.Text = "Inserisci una lettera:";
             // 
             // buttonInsert
             // 
-            buttonInsert.Location = new Point(840, 413);
-            buttonInsert.Margin = new Padding(3, 4, 3, 4);
+            buttonInsert.Location = new Point(735, 310);
             buttonInsert.Name = "buttonInsert";
-            buttonInsert.Size = new Size(94, 31);
+            buttonInsert.Size = new Size(82, 23);
             buttonInsert.TabIndex = 3;
             buttonInsert.Text = "Inserisci";
             buttonInsert.UseVisualStyleBackColor = true;
@@ -86,16 +85,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(721, 216);
+            label1.Location = new Point(631, 162);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 4;
             // 
             // GenPar
             // 
-            GenPar.Location = new Point(694, 216);
+            GenPar.Location = new Point(607, 162);
+            GenPar.Margin = new Padding(3, 2, 3, 2);
             GenPar.Name = "GenPar";
-            GenPar.Size = new Size(206, 45);
+            GenPar.Size = new Size(180, 34);
             GenPar.TabIndex = 5;
             GenPar.Text = "Genera parola";
             GenPar.UseVisualStyleBackColor = true;
@@ -105,17 +105,16 @@
             // 
             lblTrat.AutoSize = true;
             lblTrat.Font = new Font("Courier New", 16F, FontStyle.Bold);
-            lblTrat.Location = new Point(201, 329);
+            lblTrat.Location = new Point(176, 247);
             lblTrat.Name = "lblTrat";
-            lblTrat.Size = new Size(0, 31);
+            lblTrat.Size = new Size(0, 25);
             lblTrat.TabIndex = 6;
             // 
             // buttonF
             // 
-            buttonF.Location = new Point(467, 213);
-            buttonF.Margin = new Padding(3, 4, 3, 4);
+            buttonF.Location = new Point(409, 160);
             buttonF.Name = "buttonF";
-            buttonF.Size = new Size(120, 52);
+            buttonF.Size = new Size(105, 39);
             buttonF.TabIndex = 7;
             buttonF.Text = "Facile";
             buttonF.UseVisualStyleBackColor = true;
@@ -123,10 +122,9 @@
             // 
             // buttonM
             // 
-            buttonM.Location = new Point(467, 313);
-            buttonM.Margin = new Padding(3, 4, 3, 4);
+            buttonM.Location = new Point(409, 235);
             buttonM.Name = "buttonM";
-            buttonM.Size = new Size(120, 52);
+            buttonM.Size = new Size(105, 39);
             buttonM.TabIndex = 8;
             buttonM.Text = "Medio";
             buttonM.UseVisualStyleBackColor = true;
@@ -134,10 +132,9 @@
             // 
             // buttonD
             // 
-            buttonD.Location = new Point(467, 413);
-            buttonD.Margin = new Padding(3, 4, 3, 4);
+            buttonD.Location = new Point(409, 310);
             buttonD.Name = "buttonD";
-            buttonD.Size = new Size(120, 52);
+            buttonD.Size = new Size(105, 39);
             buttonD.TabIndex = 9;
             buttonD.Text = "Diffcile";
             buttonD.UseVisualStyleBackColor = true;
@@ -146,18 +143,18 @@
             // lblScritTent
             // 
             lblScritTent.AutoSize = true;
-            lblScritTent.Location = new Point(80, 218);
+            lblScritTent.Location = new Point(70, 164);
             lblScritTent.Name = "lblScritTent";
-            lblScritTent.Size = new Size(139, 20);
+            lblScritTent.Size = new Size(111, 15);
             lblScritTent.TabIndex = 10;
             lblScritTent.Text = "Tentativi rimanenti: ";
             // 
             // lblTent
             // 
             lblTent.AutoSize = true;
-            lblTent.Location = new Point(225, 218);
+            lblTent.Location = new Point(197, 164);
             lblTent.Name = "lblTent";
-            lblTent.Size = new Size(0, 20);
+            lblTent.Size = new Size(0, 15);
             lblTent.TabIndex = 11;
             // 
             // lblGameOver
@@ -165,17 +162,26 @@
             lblGameOver.AutoSize = true;
             lblGameOver.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGameOver.ForeColor = SystemColors.MenuHighlight;
-            lblGameOver.Location = new Point(309, 303);
+            lblGameOver.Location = new Point(264, 223);
             lblGameOver.Name = "lblGameOver";
-            lblGameOver.Size = new Size(442, 106);
+            lblGameOver.Size = new Size(0, 86);
             lblGameOver.TabIndex = 12;
-            lblGameOver.Text = "Game Over";
+            // 
+            // buttonJolly
+            // 
+            buttonJolly.Location = new Point(607, 362);
+            buttonJolly.Name = "buttonJolly";
+            buttonJolly.Size = new Size(61, 51);
+            buttonJolly.TabIndex = 13;
+            buttonJolly.Text = "Jolly ";
+            buttonJolly.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1096, 692);
+            ClientSize = new Size(959, 519);
+            Controls.Add(buttonJolly);
             Controls.Add(lblGameOver);
             Controls.Add(lblTent);
             Controls.Add(lblScritTent);
@@ -189,7 +195,6 @@
             Controls.Add(labelInsert);
             Controls.Add(textInsert);
             Controls.Add(labelTitolo);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -212,5 +217,6 @@
         private Label lblScritTent;
         private Label lblTent;
         private Label lblGameOver;
+        private Button buttonJolly;
     }
 }
