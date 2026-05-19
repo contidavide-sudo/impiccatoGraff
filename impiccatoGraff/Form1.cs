@@ -8,7 +8,7 @@ namespace impiccatoGraff
         Random rnd = new Random();
         string trattini = "";
 
-        int tent = 0;
+        int tent = 0, contJolly = 0;
 
         string par, lettera;
 
@@ -29,7 +29,7 @@ namespace impiccatoGraff
 
             if (parole.Count == 0)
             {
-                using (StreamReader sr = new StreamReader("lista_categorie.csv"))
+                using (StreamReader sr = new StreamReader("parole_categorie.csv"))
                 {
                     sr.ReadLine();
                     string riga = sr.ReadLine();
@@ -79,6 +79,8 @@ namespace impiccatoGraff
                 textInsert.Visible = true;
                 buttonInsert.Visible = true;
                 lblScritTent.Visible = true;
+                buttonJolly.Visible = true;
+                messaggioJolly.Visible= false;
 
                 buttonF.Visible = false;
                 buttonM.Visible = false;
@@ -95,6 +97,8 @@ namespace impiccatoGraff
                 buttonInsert.Visible = false;
                 lblScritTent.Visible = false;
                 lblGameOver.Visible = false;
+                buttonJolly.Visible = false;
+                messaggioJolly.Visible = false;
 
                 buttonF.Visible = true;
                 buttonM.Visible = true;
@@ -104,7 +108,7 @@ namespace impiccatoGraff
 
         private void VisGameOver(bool v)
         {
-            if(v == true)
+            if (v == true)
             {
                 GenPar.Visible = false;
                 labelInsert.Visible = false;
@@ -113,6 +117,8 @@ namespace impiccatoGraff
                 lblScritTent.Visible = false;
                 lblTent.Visible = false;
                 lblTrat.Visible = false;
+                buttonJolly.Visible = false;
+                messaggioJolly.Visible = false;
 
                 lblGameOver.Text = "";
                 lblGameOver.Text = "GAME OVER";
@@ -128,6 +134,8 @@ namespace impiccatoGraff
                 lblScritTent.Visible = false;
                 lblTent.Visible = false;
                 lblTrat.Visible = false;
+                buttonJolly.Visible = false;
+                messaggioJolly.Visible = false;
 
                 lblGameOver.Text = "";
                 lblGameOver.Text = "WIN";
@@ -189,7 +197,7 @@ namespace impiccatoGraff
                 {
                     VisGameOver(false);
                 }
-            
+
             }
             else
             {
@@ -204,6 +212,41 @@ namespace impiccatoGraff
             }
         }
 
-       
+        private void buttonJolly_Click(object sender, EventArgs e)
+        {
+            int indiceLetteraCas = rnd.Next(0, par.Length);
+            char letteraScelta;
+
+            if (contJolly == 0)
+            {
+                while (par[indiceLetteraCas] == trattini[indiceLetteraCas])
+                {
+                    indiceLetteraCas = rnd.Next(0, par.Length);
+                }
+
+                letteraScelta = par[indiceLetteraCas];
+
+                char[] arrayTrattini = trattini.ToCharArray();
+
+                for (int i = 0; i < par.Length; i++)
+                {
+                    if (par[i] == letteraScelta)
+                    {
+                        arrayTrattini[i] = letteraScelta;
+                    }
+                }
+
+                trattini = new string(arrayTrattini);
+
+                lblTrat.Text = "";
+                lblTrat.Text = trattini;
+
+                contJolly = contJolly + 1;
+            }
+            else
+            {
+                messaggioJolly.Visible = true;
+            }
+        }
     }
 }
