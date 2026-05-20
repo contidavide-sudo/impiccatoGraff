@@ -29,7 +29,7 @@ namespace impiccatoGraff
 
             if (parole.Count == 0)
             {
-                using (StreamReader sr = new StreamReader("parole_categorie.csv"))
+                using (StreamReader sr = new StreamReader("lista_categorie.csv"))
                 {
                     sr.ReadLine();
                     string riga = sr.ReadLine();
@@ -80,7 +80,12 @@ namespace impiccatoGraff
                 buttonInsert.Visible = true;
                 lblScritTent.Visible = true;
                 buttonJolly.Visible = true;
-                messaggioJolly.Visible= false;
+                buttonIndizioCat.Visible = true;
+                lblCat.Visible = true;
+                messaggioJolly.Visible = false;
+                InsParInt.Visible = true;
+                buttonParInt.Visible = true; 
+                lblParInt.Visible = true;
 
                 buttonF.Visible = false;
                 buttonM.Visible = false;
@@ -98,7 +103,12 @@ namespace impiccatoGraff
                 lblScritTent.Visible = false;
                 lblGameOver.Visible = false;
                 buttonJolly.Visible = false;
+                buttonIndizioCat.Visible = false;
                 messaggioJolly.Visible = false;
+                lblCat.Visible = false;
+                InsParInt.Visible = false;
+                buttonParInt.Visible = false;
+                lblParInt.Visible = false;
 
                 buttonF.Visible = true;
                 buttonM.Visible = true;
@@ -118,7 +128,12 @@ namespace impiccatoGraff
                 lblTent.Visible = false;
                 lblTrat.Visible = false;
                 buttonJolly.Visible = false;
+                buttonIndizioCat.Visible = false;
                 messaggioJolly.Visible = false;
+                lblCat.Visible = false;
+                InsParInt.Visible = false;
+                buttonParInt.Visible = false;
+                lblParInt.Visible = false;
 
                 lblGameOver.Text = "";
                 lblGameOver.Text = "GAME OVER";
@@ -135,7 +150,12 @@ namespace impiccatoGraff
                 lblTent.Visible = false;
                 lblTrat.Visible = false;
                 buttonJolly.Visible = false;
+                buttonIndizioCat.Visible = false;
                 messaggioJolly.Visible = false;
+                lblCat.Visible = false;
+                InsParInt.Visible = false;
+                buttonParInt.Visible = false;
+                lblParInt.Visible = false;
 
                 lblGameOver.Text = "";
                 lblGameOver.Text = "WIN";
@@ -246,6 +266,53 @@ namespace impiccatoGraff
             else
             {
                 messaggioJolly.Visible = true;
+            }
+        }
+
+        private void buttonIndizioCat_Click(object sender, EventArgs e)
+        {
+            using (StreamReader sr = new StreamReader("lista_categorie.csv"))
+            {
+                string[] rigaCat = sr.ReadLine().Split(",");
+                string riga = sr.ReadLine();
+                string[] linea;
+                int ind = -1;
+
+                while (riga != null)
+                {
+                    linea = riga.Split(",");
+
+                    for (int i = 0; i < rigaCat.Length; i++)
+                    {
+                        if (linea[i] == par)
+                        {
+                            ind = i;
+                        }
+                    }
+
+                    riga = sr.ReadLine();
+                }
+
+                lblCat.Text = "";
+                lblCat.Text = rigaCat[ind];
+
+            }
+
+        }
+
+        private void buttonParInt_Click(object sender, EventArgs e)
+        {
+            string parInt = InsParInt.Text;
+
+            parInt = parInt.ToLower();
+
+            if (parInt == par)
+            {
+                VisGameOver(false);
+            }
+            else
+            {
+                VisGameOver(true);
             }
         }
     }
