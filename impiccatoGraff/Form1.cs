@@ -6,7 +6,7 @@ namespace impiccatoGraff
     {
         List<string> parole = new List<string>();
         Random rnd = new Random();
-        string trattini = "";
+        string trattini = "", mod;
 
         int tent = 0, contJolly = 0;
 
@@ -29,7 +29,7 @@ namespace impiccatoGraff
 
             if (parole.Count == 0)
             {
-                using (StreamReader sr = new StreamReader("lista_categorie.csv"))
+                using (StreamReader sr = new StreamReader("paroleImp.csv"))
                 {
                     sr.ReadLine();
                     string riga = sr.ReadLine();
@@ -167,6 +167,7 @@ namespace impiccatoGraff
         private void buttonF_Click(object sender, EventArgs e)
         {
             tent = 10;
+            mod = "F";
             lblTent.Text = Convert.ToString(tent);
             VisualizzaGioco(true);
         }
@@ -174,6 +175,7 @@ namespace impiccatoGraff
         private void buttonM_Click(object sender, EventArgs e)
         {
             tent = 8;
+            mod = "M";
             lblTent.Text = Convert.ToString(tent);
             VisualizzaGioco(true);
 
@@ -182,6 +184,7 @@ namespace impiccatoGraff
         private void buttonD_Click(object sender, EventArgs e)
         {
             tent = 5;
+            mod = "D";
             lblTent.Text = Convert.ToString(tent);
             VisualizzaGioco(true);
 
@@ -224,6 +227,11 @@ namespace impiccatoGraff
                 tent = tent - 1;
 
                 lblTent.Text = Convert.ToString(tent);
+
+                if (mod == "F")
+                {
+
+                }
 
                 if (tent == 0)
                 {
