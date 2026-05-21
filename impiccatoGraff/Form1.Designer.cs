@@ -267,7 +267,7 @@
             // immBase
             // 
             immBase.Image = (Image)resources.GetObject("immBase.Image");
-            immBase.Location = new Point(2, 406);
+            immBase.Location = new Point(7, 406);
             immBase.Name = "immBase";
             immBase.Size = new Size(347, 283);
             immBase.SizeMode = PictureBoxSizeMode.Zoom;
